@@ -1,0 +1,19 @@
+<h1><%= @genre.name %></h1>
+<%# if there are artists, list them %>
+<% if @genre.artists %>
+  <h3>Artists: </h3>
+  <ul>
+  <% @genre.artists.each do |artist|%>
+    <li><%= link_to(artist.name, artist) %></li>
+  <% end %>
+  </ul>
+<% end %>
+<%# if there are songs, list them %>
+<% if @genre.songs %>
+  <h3>Songs: </h3>
+  <ul>
+  <% @genre.songs.each do |song| %>
+    <li><%= link_to(song.name, song) %></li>
+  <% end %>
+  </ul>
+<% end %>
